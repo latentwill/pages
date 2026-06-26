@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=1280, initial-scale=1.0">
@@ -34,7 +34,7 @@
 body {
   width: 1280px; height: 720px;
   overflow: hidden;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Rajdhani', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -65,6 +65,7 @@ body {
   position: absolute; width: 32px; height: 32px;
   border-color: var(--border-glow);
   border-style: solid;
+  z-index: 2;
 }
 .corner.tl { top: 48px; left: 20px; border-width: 2px 0 0 2px; }
 .corner.tr { top: 48px; right: 20px; border-width: 2px 2px 0 0; }
@@ -78,6 +79,7 @@ body {
   padding: 0 48px;
   background: rgba(255,255,255,0.96);
   border-bottom: 1px solid var(--border);
+  z-index: 2;
 }
 .topbar .brand {
   font-family: 'Orbitron', monospace;
@@ -169,39 +171,20 @@ body {
 .col { flex: 1; }
 
 </style>
-<title>Slide 03</title>
+<title>投影片 01</title>
 </head>
 <body>
 <div class="slide">
 
 <div class="grid-bg"></div>
 <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-<div class="topbar"><span class="brand">◆ AGENT SKILLS</span><span class="nav">// SKILL 01 — COPY</span><span class="page-num">03 / 18</span></div>
-<div class="title-area">
-  <div class="title">Skill #1 — <span class="accent">Copy an Employee</span></div>
+<div class="topbar">
+  <span class="brand">◆ 代理人技能</span>
+  <span class="nav">系統 // 2026 分享</span>
+  <span class="page-num">01 / 18</span>
 </div>
-<div style="position:absolute;top:165px;left:48px;right:48px;display:flex;gap:18px;">
-  <div class="panel accent-cyan" style="flex:1;">
-    <div class="panel-body">
-      A real GitHub project turns a departing colleague's chat logs, emails, docs, and screenshots into a skill that can:<br><br>
-      -> write code in their style<br>
-      -> answer questions in their voice<br>
-      -> replicate their decision patterns<br>
-      -> know when they'd dodge responsibility
-      <a class="repo-link" href="https://github.com/titanwings/colleague-skill" target="_blank" rel="noopener">titanwings/colleague-skill</a>
-    </div>
-  </div>
-  <div class="panel accent-purple" style="flex:1;">
-    <div class="panel-body">
-      Once one work pattern becomes copyable, the genre expands fast:<br><br>
-      -> <b style="color:var(--pink);">Ex.skill</b> — distill your ex<br>
-      -> <b style="color:var(--cyan);">Self.skill</b> — distill yourself first<br>
-      -> <b style="color:var(--green);">Boss.skill</b> — upward-manage your boss<br>
-      -> <b style="color:var(--amber);">Nuwa.skill</b> — distill Munger, Feynman, Musk<br><br>
-      If work patterns are legible, they are skill-able.
-    </div>
-  </div>
-</div>
+<img src="../00_agentskillstitle.png" alt="代理人技能" style="position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:1280px;height:auto;filter:drop-shadow(0 22px 34px rgba(12,28,54,0.10));">
+<div style="position:absolute;left:64px;bottom:66px;font-family:'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;font-size:54px;font-weight:900;line-height:1.08;color:#0B1324;letter-spacing:0.02em;text-shadow:0 3px 0 rgba(255,255,255,0.55);">代理人技能</div>
 
 </div>
 </body>

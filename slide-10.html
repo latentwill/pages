@@ -8,25 +8,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg: #0A0E1A;
-  --bg2: #0F1525;
-  --panel: #131B2E;
-  --panel2: #1A2440;
-  --border: #1E3050;
-  --border-glow: #2A4A7F;
+  --bg: #F7FAFF;
+  --bg2: #EEF4FF;
+  --panel: #FFFFFF;
+  --panel2: #F8FBFF;
+  --border: #D7E2F3;
+  --border-glow: #91B5E8;
   --orange: #FF6B1A;
   --orange-glow: #FF8A3D;
-  --cyan: #00D9FF;
-  --cyan-glow: #33E5FF;
+  --cyan: #087EA4;
+  --cyan-glow: #0E7490;
   --purple: #9D4EFF;
   --green: #00FF94;
   --red: #FF3D5A;
   --pink: #FF4E9C;
   --amber: #FFB800;
-  --white: #F0F4FF;
-  --text: #C8D4E8;
-  --text-dim: #6B7B96;
-  --text-muted: #4A5A75;
+  --white: #0B1324;
+  --text: #1B2A41;
+  --text-dim: #64748B;
+  --text-muted: #8090A6;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -50,14 +50,14 @@ body {
 .grid-bg {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(30,48,80,0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30,48,80,0.4) 1px, transparent 1px);
+    linear-gradient(rgba(145,181,232,0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145,181,232,0.24) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.3;
+  opacity: 0.22;
 }
 .grid-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, var(--bg) 75%);
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(247,250,255,0.92) 75%);
 }
 
 /* === CORNER BRACKETS === */
@@ -66,8 +66,8 @@ body {
   border-color: var(--border-glow);
   border-style: solid;
 }
-.corner.tl { top: 20px; left: 20px; border-width: 2px 0 0 2px; }
-.corner.tr { top: 20px; right: 20px; border-width: 2px 2px 0 0; }
+.corner.tl { top: 48px; left: 20px; border-width: 2px 0 0 2px; }
+.corner.tr { top: 48px; right: 20px; border-width: 2px 2px 0 0; }
 .corner.bl { bottom: 20px; left: 20px; border-width: 0 0 2px 2px; }
 .corner.br { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
 
@@ -76,7 +76,7 @@ body {
   position: absolute; top: 0; left: 0; right: 0; height: 36px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 48px;
-  background: linear-gradient(180deg, var(--panel) 0%, transparent 100%);
+  background: rgba(255,255,255,0.96);
   border-bottom: 1px solid var(--border);
 }
 .topbar .brand {
@@ -102,70 +102,46 @@ body {
 }
 .title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 28px; font-weight: 900;
+  font-size: 40px; font-weight: 900;
   color: var(--white);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 .title .accent { color: var(--orange); }
-.subtitle {
-  font-size: 13px; color: var(--text-dim);
-  margin-top: 4px; font-weight: 400;
-}
-
 /* === PANELS === */
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 4px;
   position: relative;
+  box-shadow: 0 10px 24px rgba(12,28,54,0.08);
 }
-.panel.accent-left { border-left: 3px solid var(--orange); }
-.panel.accent-cyan { border-left: 3px solid var(--cyan); }
-.panel.accent-purple { border-left: 3px solid var(--purple); }
-.panel.accent-green { border-left: 3px solid var(--green); }
-.panel.accent-red { border-left: 3px solid var(--red); }
-.panel.accent-pink { border-left: 3px solid var(--pink); }
+.panel.accent-left { border-color: var(--orange); }
+.panel.accent-cyan { border-color: var(--cyan); }
+.panel.accent-purple { border-color: var(--purple); }
+.panel.accent-green { border-color: var(--green); }
+.panel.accent-red { border-color: var(--red); }
+.panel.accent-pink { border-color: var(--pink); }
 
-.panel-header {
-  padding: 10px 16px 6px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px; font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 .panel-body {
-  padding: 0 16px 14px;
-  font-size: 13px; line-height: 1.6;
+  padding: 18px 20px;
+  font-size: 17px; line-height: 1.45;
   color: var(--text);
 }
 
-/* === BADGES === */
-.badge {
+.repo-link {
   display: inline-block;
-  padding: 3px 10px;
+  margin-top: 18px;
   font-family: 'Orbitron', monospace;
-  font-size: 8px; font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-radius: 2px;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  text-decoration: none;
+  word-break: break-all;
 }
-.badge.orange { background: var(--orange); color: #000; }
-.badge.cyan { background: var(--cyan); color: #000; }
-.badge.purple { background: var(--purple); color: #fff; }
-.badge.green { background: var(--green); color: #000; }
-.badge.red { background: var(--red); color: #fff; }
 
-/* === QUOTE BAR === */
-.quote-bar {
-  position: absolute; bottom: 48px; left: 48px; right: 48px;
-  padding: 10px 16px;
-  background: var(--panel2);
-  border-left: 3px solid var(--orange);
-  border-radius: 2px;
-  font-size: 12px; color: var(--text);
-  font-style: italic;
-}
+.repo-link:hover { color: var(--orange); }
 
 /* === STATS === */
 .stat-block {
@@ -192,51 +168,14 @@ body {
 .flex-row { display: flex; gap: 16px; }
 .col { flex: 1; }
 
-
-/* === LANGUAGE SWITCHER === */
-.lang-switcher {
-  position: absolute;
-  top: 46px;
-  right: 48px;
-  z-index: 20;
-  display: flex;
-  gap: 6px;
-  padding: 4px;
-  background: rgba(10,14,26,0.78);
-  border: 1px solid var(--border-glow);
-  border-radius: 999px;
-  box-shadow: 0 0 18px rgba(0,217,255,0.16);
-  backdrop-filter: blur(8px);
-}
-.lang-switcher button {
-  appearance: none;
-  border: 0;
-  border-radius: 999px;
-  padding: 5px 10px 4px;
-  background: transparent;
-  color: var(--text-dim);
-  font-family: 'Orbitron', monospace;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-.lang-switcher button.active {
-  background: var(--cyan);
-  color: #00121A;
-  box-shadow: 0 0 12px rgba(0,217,255,0.45);
-}
-
 </style>
 <title>Slide 10</title>
 </head>
 <body>
 <div class="slide">
 
-<div style="position:absolute;inset:0;background:url('assets/archetypes.png') center/cover;"></div>
-<div style="position:absolute;bottom:48px;left:48px;right:48px;padding:10px 20px;background:rgba(10,14,26,0.75);border-left:3px solid var(--orange);border-radius:2px;backdrop-filter:blur(8px);">
-  <div style="font-size:12px;color:var(--white);font-weight:500;font-style:italic;">Archetypes make skills legible: each role gets a backpack of capabilities, not a vague job description.</div>
-</div>
+<img src="01b_archetypes.png" alt="Agent archetypes lineup" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,0.12) 0%,rgba(10,14,26,0.02) 38%,rgba(10,14,26,0.14) 100%);"></div>
 <div class="corner tl" style="border-color:rgba(255,107,26,0.6);"></div>
 <div class="corner tr" style="border-color:rgba(255,107,26,0.6);"></div>
 <div class="corner bl" style="border-color:rgba(255,107,26,0.6);"></div>
@@ -248,12 +187,5 @@ body {
 </div>
 
 </div>
-
-<div class="lang-switcher" aria-label="Language switcher">
-  <button type="button" data-set-lang="en">ENG</button>
-  <button type="button" data-set-lang="tw">TW</button>
-</div>
-<script src="lang.v5b94017.js"></script>
-
 </body>
 </html>

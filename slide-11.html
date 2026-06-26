@@ -1,25 +1,26 @@
-<!DOCTYPE html><html lang="zh-Hant-TW"><head><meta charset="UTF-8"><title>Slide 11</title><link rel="stylesheet" href="slides.css"><script src="lang.v5b94017.js"></script><style>
-.character-stage { position:absolute; inset:70px 48px 44px 48px; display:grid; grid-template-columns: 52% 48%; gap:26px; align-items:center; }
-.character-crop { width:100%; height:560px; border:1px solid var(--border-glow); border-radius:10px; overflow:hidden; background:#9de8ff; box-shadow:0 0 40px #00D9FF44; position:relative; }
-.character-crop img { position:absolute; height:100%; width:auto; max-width:none; top:0; transform:translateX(-0%); }
-.character-card { background:linear-gradient(135deg, rgba(19,27,46,.96), rgba(10,14,26,.94)); border:1px solid #00D9FF; border-left:5px solid #00D9FF; border-radius:8px; padding:28px; min-height:440px; box-shadow:0 0 30px #00D9FF22; }
-.character-en { font-family:'Orbitron'; font-size:14px; color:#00D9FF; letter-spacing:3px; font-weight:900; }
-.character-title { font-family:'Orbitron'; font-size:44px; color:var(--white); font-weight:900; margin:10px 0 6px; }
-.character-role { font-size:22px; color:#00D9FF; font-weight:700; margin-bottom:26px; }
-.character-body { font-size:24px; line-height:1.65; color:var(--text); font-weight:500; }
-.character-skills { margin-top:26px; padding:18px; background:rgba(255,255,255,.04); border-radius:6px; font-size:20px; line-height:1.5; color:var(--white); }
-</style></head><body>
-<div class="slide" data-slide="11">
-  <div class="grid-bg"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-  <div class="topbar"><span class="brand">◆ AGENT SKILLS</span><span class="nav">// ARCHETYPE CLASS</span><span class="page-num">11 / 18</span></div>
-  <div class="character-stage">
-    <div class="character-crop"><img src="assets/archetypes.png" alt="THE OPERATOR"></div>
-    <div class="character-card">
-      <div class="character-en">THE OPERATOR</div>
-      <div class="character-title">操作員</div>
-      <div class="character-role">系統協調者</div>
-      <div class="character-body">左手拿著控制面板，負責讓混亂變成可執行的流程。</div>
-      <div class="character-skills">適合技能：事件處理、Runtime 檢查、部署驗證、協調、服務營運。</div>
-    </div>
-  </div>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+:root{--bg:#F7FAFF;--panel:#FFFFFF;--border:#D7E2F3;--white:#0B1324;--text:#1B2A41;--muted:#65758B;--accent:#087EA4;--accent2:#00FF94;--deep:#08384A;--orange:#FF6B1A}
+*{margin:0;padding:0;box-sizing:border-box}body{width:1280px;height:720px;overflow:hidden;font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--text)}.slide{width:1280px;height:720px;position:relative;overflow:hidden;background:linear-gradient(180deg,#FFFFFF 0%,#F1F6FF 100%)}.grid-bg{display:none}.corner{position:absolute;width:32px;height:32px;border-color:var(--accent);border-style:solid;opacity:.65}.tl{top:48px;left:20px;border-width:2px 0 0 2px}.tr{top:48px;right:20px;border-width:2px 2px 0 0}.bl{bottom:20px;left:20px;border-width:0 0 2px 2px}.br{bottom:20px;right:20px;border-width:0 2px 2px 0}.topbar{position:absolute;top:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,.96);border-bottom:1px solid #C9D7EA;font-family:'Orbitron',monospace;text-transform:uppercase}.brand{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--accent)}.nav{font-size:9px;color:#64748B;letter-spacing:2px}.page-num{font-size:10px;color:#0F5F9A;font-weight:700}.title{position:absolute;top:64px;left:490px;font-family:'Orbitron',sans-serif;font-size:58px;font-weight:900;text-transform:uppercase;color:var(--white);letter-spacing:.5px}.title span{color:var(--accent)}.image-frame{position:absolute;left:54px;top:70px;width:430px;height:620px;overflow:visible}.image-frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:620px;width:auto;filter:drop-shadow(0 18px 20px rgba(18,31,56,.18))}.body{position:absolute;left:490px;right:58px;top:164px;display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.panel{background:#FFFFFF;border:1px solid var(--accent);border-radius:4px;box-shadow:0 10px 24px rgba(12,28,54,.08)}.panel-body{padding:22px 24px;font-size:22px;line-height:1.42;color:var(--text)}
+.skill-list{display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:328px;text-align:center}.skill-list a{display:block;color:var(--accent);text-decoration:none;border:1px solid var(--accent);background:rgba(255,255,255,.72);padding:14px 16px;border-radius:4px}.skill-list a:hover{background:var(--accent);color:#FFFFFF}.skill-name{display:block;font-family:"Orbitron",monospace;font-size:17px;font-weight:800;line-height:1.2}.skill-desc{display:block;margin-top:7px;font-size:16px;line-height:1.25;color:var(--text)}.skill-list a:hover .skill-desc{color:#FFFFFF}
+</style>
+<title>Slide 11</title>
+</head>
+<body>
+<div class="slide">
+<div class="grid-bg"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+<div class="topbar"><span class="brand">◆ AGENT SKILLS</span><span class="nav">// OPERATOR</span><span class="page-num">11 / 18</span></div>
+<div class="title"><span>Operator</span></div>
+<div class="image-frame"><img src="02operator.png" alt="Operator archetype"></div>
+<div class="body">
+  <div class="panel"><div class="panel-body">The Operator keeps live systems moving. This archetype is about triage, coordination, runtime checks, handoffs, and knowing what needs attention now.</div></div>
+  <div class="panel"><div class="panel-body skill-list"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener"><span class="skill-name">Last30days</span><span class="skill-desc">A situational awareness skill for recent work: commits, messages, updates, and what changed while you were not watching.</span></a><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener"><span class="skill-name">Matthew Pocock Skills</span><span class="skill-desc">Operator-grade TypeScript habits packaged as repeatable guidance for diagnosing code, APIs, and developer workflow.</span></a></div></div>
+</div>
+</div>
+</body>
+</html>
