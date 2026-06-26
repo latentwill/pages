@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
+<style>
+/* === AGENT SKILLS DECK — FUTURISTIC GAME UI === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0A0E1A;
+  --bg2: #0F1525;
+  --panel: #131B2E;
+  --panel2: #1A2440;
+  --border: #1E3050;
+  --border-glow: #2A4A7F;
+  --orange: #FF6B1A;
+  --orange-glow: #FF8A3D;
+  --cyan: #00D9FF;
+  --cyan-glow: #33E5FF;
+  --purple: #9D4EFF;
+  --green: #00FF94;
+  --red: #FF3D5A;
+  --pink: #FF4E9C;
+  --amber: #FFB800;
+  --white: #F0F4FF;
+  --text: #C8D4E8;
+  --text-dim: #6B7B96;
+  --text-muted: #4A5A75;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  width: 1280px; height: 720px;
+  overflow: hidden;
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.slide {
+  width: 1280px; height: 720px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* === BACKGROUND GRID === */
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(30,48,80,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,48,80,0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+.grid-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, var(--bg) 75%);
+}
+
+/* === CORNER BRACKETS === */
+.corner {
+  position: absolute; width: 32px; height: 32px;
+  border-color: var(--border-glow);
+  border-style: solid;
+}
+.corner.tl { top: 20px; left: 20px; border-width: 2px 0 0 2px; }
+.corner.tr { top: 20px; right: 20px; border-width: 2px 2px 0 0; }
+.corner.bl { bottom: 20px; left: 20px; border-width: 0 0 2px 2px; }
+.corner.br { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
+
+/* === TOP BAR === */
+.topbar {
+  position: absolute; top: 0; left: 0; right: 0; height: 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  background: linear-gradient(180deg, var(--panel) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; color: var(--orange);
+  text-transform: uppercase;
+}
+.topbar .nav {
+  font-family: 'Orbitron', monospace;
+  font-size: 9px; color: var(--text-muted);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.topbar .page-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 10px; color: var(--cyan);
+  font-weight: 700;
+}
+
+/* === TITLES === */
+.title-area {
+  position: absolute; top: 60px; left: 48px; right: 48px;
+}
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.title .accent { color: var(--orange); }
+.subtitle {
+  font-size: 13px; color: var(--text-dim);
+  margin-top: 4px; font-weight: 400;
+}
+
+/* === PANELS === */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  position: relative;
+}
+.panel.accent-left { border-left: 3px solid var(--orange); }
+.panel.accent-cyan { border-left: 3px solid var(--cyan); }
+.panel.accent-purple { border-left: 3px solid var(--purple); }
+.panel.accent-green { border-left: 3px solid var(--green); }
+.panel.accent-red { border-left: 3px solid var(--red); }
+.panel.accent-pink { border-left: 3px solid var(--pink); }
+
+.panel-header {
+  padding: 10px 16px 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.panel-body {
+  padding: 0 16px 14px;
+  font-size: 13px; line-height: 1.6;
+  color: var(--text);
+}
+
+/* === BADGES === */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: 'Orbitron', monospace;
+  font-size: 8px; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 2px;
+}
+.badge.orange { background: var(--orange); color: #000; }
+.badge.cyan { background: var(--cyan); color: #000; }
+.badge.purple { background: var(--purple); color: #fff; }
+.badge.green { background: var(--green); color: #000; }
+.badge.red { background: var(--red); color: #fff; }
+
+/* === QUOTE BAR === */
+.quote-bar {
+  position: absolute; bottom: 48px; left: 48px; right: 48px;
+  padding: 10px 16px;
+  background: var(--panel2);
+  border-left: 3px solid var(--orange);
+  border-radius: 2px;
+  font-size: 12px; color: var(--text);
+  font-style: italic;
+}
+
+/* === STATS === */
+.stat-block {
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px; font-weight: 900;
+}
+.stat-label {
+  font-size: 9px; color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px; margin-top: 2px;
+}
+
+/* === ARROW === */
+.arrow {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+  font-size: 28px;
+}
+
+/* === HELPER === */
+.flex-row { display: flex; gap: 16px; }
+.col { flex: 1; }
+
+
+/* === LANGUAGE SWITCHER === */
+.lang-switcher {
+  position: absolute;
+  top: 46px;
+  right: 48px;
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: rgba(10,14,26,0.78);
+  border: 1px solid var(--border-glow);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(0,217,255,0.16);
+  backdrop-filter: blur(8px);
+}
+.lang-switcher button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px 4px;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'Orbitron', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.lang-switcher button.active {
+  background: var(--cyan);
+  color: #00121A;
+  box-shadow: 0 0 12px rgba(0,217,255,0.45);
+}
+
+</style>
+<title>Slide 09</title>
+</head>
+<body>
+<div class="slide">
+
+<div class="grid-bg"></div>
+<div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+<div class="topbar"><span class="brand">◆ AGENT SKILLS</span><span class="nav">// IDEONOMY SKILL</span><span class="page-num">09 / 12</span></div>
+<div class="title-area">
+  <div class="title">Building the <span style="color:var(--purple);">Ideonomy Skill</span></div>
+  <div class="subtitle">github.com/latentwill/ideonomy-skill · Grace Kind's synthesis + random number generator</div>
+</div>
+<div style="position:absolute;top:170px;left:48px;right:48px;display:flex;gap:16px;">
+  <div class="panel accent-left" style="flex:0.45;">
+    <div class="panel-header" style="color:var(--orange);">▸ The Pick Mechanism</div>
+    <div class="panel-body">
+      On every invocation, a bash script randomly selects:<br>
+      ▸ 1–2 operators<br>
+      ▸ 1 organon<br>
+      ▸ 2–3 dimension-prompts<br><br>
+      <b style="color:var(--white);">This is critical</b> — without forced variation, the model falls back to default brainstorming habits every time.
+    </div>
+  </div>
+  <div class="panel accent-purple" style="flex:0.55;">
+    <div class="panel-header" style="color:var(--purple);">▸ Example Invocation</div>
+    <div class="panel-body" style="font-family:'Orbitron',monospace;font-size:10px;line-height:1.8;color:var(--green);">
+      $ ~/.claude/skills/ideonomy/bin/pick<br><br>
+      <span style="color:var(--cyan);">=== IDEONOMY METHOD TUPLE ===</span><br>
+      <span style="color:var(--orange);">OPERATORS:</span><br>
+      &nbsp;&nbsp;- abstraction-lift<br>
+      &nbsp;&nbsp;- cross-domain-reinstantiation<br>
+      <span style="color:var(--orange);">ORGANONS:</span><br>
+      &nbsp;&nbsp;- periodic-grid<br>
+      <span style="color:var(--orange);">DIMENSION-PROMPTS:</span><br>
+      &nbsp;&nbsp;- longevity<br>
+      &nbsp;&nbsp;- autonomy<br>
+      &nbsp;&nbsp;- reversibility
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
+    <div class="panel" style="border-left:3px solid var(--orange);flex:1;">
+      <div class="panel-header" style="color:var(--orange);font-size:11px;">▸ OPERATORS (8)</div>
+      <div class="panel-body" style="font-size:10px;line-height:1.5;">negation · substitution · combination · abstraction-lift · cross-domain-sampling · reinstantiation · inversion · scale-shift</div>
+    </div>
+    <div class="panel" style="border-left:3px solid var(--cyan);flex:1;">
+      <div class="panel-header" style="color:var(--cyan);font-size:11px;">▸ ORGANONS (17)</div>
+      <div class="panel-body" style="font-size:10px;line-height:1.5;">dictionary · chart · tree · atlas · scale · cycle · periodic-grid · list · matrix · network · spectrum · map · flow-chart · hierarchy</div>
+    </div>
+    <div class="panel" style="border-left:3px solid var(--green);flex:1;">
+      <div class="panel-header" style="color:var(--green);font-size:11px;">▸ DIMENSIONS</div>
+      <div class="panel-body" style="font-size:10px;line-height:1.5;">visibility · autonomy · longevity · reversibility · decomposability · naturalness · granularity · temporality</div>
+    </div>
+  </div>
+</div>
+<div class="quote-bar" style="border-left-color:var(--purple);">"The deeper move: make creativity inspectable. You don't get a list of ideas — you get a visible record of which operators, axes, and transformations produced them."</div>
+
+</div>
+
+<div class="lang-switcher" aria-label="Language switcher">
+  <button type="button" data-set-lang="en">ENG</button>
+  <button type="button" data-set-lang="tw">TW</button>
+</div>
+<script src="lang.js"></script>
+
+</body>
+</html>
